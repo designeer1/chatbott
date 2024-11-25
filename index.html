@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chatbot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+   <div class="chat-container">
+    <div class="chat-header">
+        
+        LETS  TALK  WITH  KALYAN  !!!
+    </div>
+      <!-- Add the class chat-content for JS to append messages -->
+      <div class="chat-content"></div>
+   </div> 
+
+   <div class="prompt-area">
+      <input type="text" id="prompt" placeholder="Message...">
+      <!-- Image upload button -->
+<div id="image">
+    <button type="button"><img src="https://cdn-icons-png.flaticon.com/128/739/739249.png" alt="Image"></button>
+    <input type="file" accept="image/*" style="display: none;" />
+</div>
+
+      <button id="submit"><img src="https://cdn-icons-png.flaticon.com/128/3647/3647502.png" alt="Send"></button>
+   </div>
+
+   <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+/* Resetting default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Body styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #2a2a2a;
+    overflow: hidden;
+}
+
+/* Chat container */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px;
+    height: 100%;
+    background-color: rgb(22, 21, 36);
+    padding: 20px;
+    overflow: auto;
+    position: relative;
+}
+
+/* Chat header with animations */
+.chat-header {
+    text-align: center;
+    background-color: #522c5072;
+    color: #33c1e1;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(147, 17, 17, 0.712);
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 10;
+
+    /* Slide-in from the top animation */
+    animation: slideIn 1s ease-out forwards, fadeInText 2s ease-in-out;
+}
+
+/* Keyframe animation for the slide-in effect */
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%); /* Start above the page */
+        opacity: 0; /* Start invisible */
+    }
+    to {
+        transform: translateY(0); /* End in normal position */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+/* Keyframe animation for the text fade-in effect */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Hover effect: Color change */
+.chat-header:hover {
+    background-color: #555;
+    cursor: pointer;
+    transform: scale(1.05); /* Slight scaling effect */
+    transition: all 0.3s ease;
+}
+
+/* Chat content (holds messages) */
+.chat-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 80px;
+}
+
+/* User's chat box */
+.user-chat-box {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.user-chat-area {
+    background-color: black;
+    color: rgba(255, 255, 255, 0.639);
+    padding: 15px;
+    border-radius: 30px;
+    box-shadow: 2px 2px 10px black;
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+/* AI's chat box */
+.ai-chat-box {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.ai-chat-area {
+    background-color: rgba(18, 11, 11, 0.586);
+    color: aliceblue;
+    padding: 15px;
+    border-radius: 30px;
+    max-width: 70%;
+    word-wrap: break-word;
+    box-shadow: 2px 2px 10px black;
+}
+
+/* Image styling */
+#userimage, #aiimage {
+    border-radius: 50%;
+    filter: drop-shadow(2px 2px 10px black);
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+/* Input area style */
+.prompt-area {
+    width: 100%;
+    height: 80px;
+    background-color: rgb(22, 21, 36);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    border-top: 2px solid #444;
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+}
+
+/* Input field styling */
+.prompt-area input {
+    width: 60%;
+    height: 50px;
+    background-color: black;
+    color: aliceblue;
+    border: none;
+    border-radius: 30px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Submit button styling */
+.prompt-area button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prompt-area button img {
+    width: 30px;
+    height: 30px;
+}
