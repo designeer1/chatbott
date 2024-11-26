@@ -13,7 +13,7 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #2a2a2a;
-    overflow: hidden;
+    overflow: auto;
 }
 
 /* Chat container */
@@ -25,7 +25,7 @@ body {
     height: 100%;
     background-color: rgb(22, 21, 36);
     padding: 20px;
-    overflow: auto;
+    overflow: hidden;
     position: relative;
 }
 
@@ -87,11 +87,12 @@ body {
 /* Chat content (holds messages) */
 .chat-content {
     flex-grow: 1;
-    overflow-y: auto;
+    overflow-y: auto;  /* Allow vertical scrolling */
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-bottom: 80px;
+    margin-bottom: 80px;  /* Adjust margin-bottom as needed */
+    padding-right: 10px;  /* Add some padding for better visual */
 }
 
 /* User's chat box */
@@ -151,6 +152,8 @@ body {
     position: fixed;
     bottom: 0;
     z-index: 100;
+    overflow: hidden;
+    box-sizing: border-box; /* Ensure padding is accounted for */
 }
 
 /* Input field styling */
